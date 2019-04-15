@@ -138,3 +138,21 @@ precision, recall, _ = precision_recall_curve(y_test, predicted)
 
 # Plot the recall precision tradeoff
 plot_pr_curve(recall, precision, average_precision)
+
+
+# Model Weight addjustments
+
+# Define the model with balanced subsample
+model = RandomForestClassifier(class_weight='balanced_subsample', random_state=5)
+
+# Fit your training model to your training set
+model.fit(X_train,y_train)
+
+# Obtain the predicted values and probabilities from the model
+predicted = model.predict(X_test)
+probs = model.predict_proba(X_test)
+
+# Print the roc_auc_score, the classification report and confusion matrix
+print(roc_auc_score(y_test, probs[:,1]))
+print(classification_report(y_test,predicted))
+print(confusion_matrix(y_test,predicted))
