@@ -71,3 +71,19 @@ model = LogisticRegression()
 
 # Define the pipeline, tell it to combine SMOTE with the Logistic Regression model
 pipeline = Pipeline([('SMOTE', resampling), ('Logistic Regression', model)])
+
+
+#Natural Hit Rate
+
+# Count the total number of observations from the length of y
+total_obs = len(y)
+
+# Count the total number of non-fraudulent observations
+non_fraud = [i for i in y if i == 0]
+count_non_fraud = non_fraud.count(0)
+
+# Calculate the percentage of non fraud observations in the dataset
+percentage = (float(count_non_fraud)/float(total_obs)) * 100
+
+# Print the percentage: this is our "natural accuracy" by doing nothing
+print(percentage)
