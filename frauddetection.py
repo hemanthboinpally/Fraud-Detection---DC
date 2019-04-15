@@ -87,3 +87,15 @@ percentage = (float(count_non_fraud)/float(total_obs)) * 100
 
 # Print the percentage: this is our "natural accuracy" by doing nothing
 print(percentage)
+
+
+#Random Forest Classifier
+
+# Import the random forest model from sklearn
+from sklearn.ensemble import RandomForestClassifier
+
+# Split your data into training and test set
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.3, random_state=0)
+
+# Define the model as the random forest
+model = RandomForestClassifier(random_state=5)
