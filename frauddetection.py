@@ -128,3 +128,13 @@ probs = model.predict_proba(X_test)
 print(roc_auc_score(y_test, probs[:,1]))
 print(classification_report(y_test, predicted))
 print(confusion_matrix(y_test,predicted))
+
+
+#Calculate average precision and the PR curve
+average_precision = average_precision_score(y_test, predicted)
+
+# Obtain precision and recall
+precision, recall, _ = precision_recall_curve(y_test, predicted)
+
+# Plot the recall precision tradeoff
+plot_pr_curve(recall, precision, average_precision)
