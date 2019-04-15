@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e932018e-cab1-4c55-bda0-c45cf7eac9a7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frauddetection.py" beforeDir="false" afterPath="$PROJECT_DIR$/frauddetection.py" afterDir="false" />
     </list>
@@ -17,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frauddetection.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+            <state relative-caret-position="305">
+              <caret line="117" selection-start-line="117" selection-end-line="129" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -118,14 +117,28 @@
       <option name="project" value="LOCAL" />
       <updated>1555204616906</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Know the Baseline">
+      <created>1555286755381</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1555286755381</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Random forest">
+      <created>1555286938350</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1555286938350</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="972" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25274727" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25274727" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Project Explorer" order="2" weight="0.32967034" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -142,7 +155,7 @@
       <window_info anchor="bottom" id="DB Execution Console" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32993197" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="11" visible="true" weight="0.33068183" />
+      <window_info anchor="bottom" id="Version Control" order="11" visible="true" weight="0.33068183" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -156,13 +169,15 @@
     <MESSAGE value="plot the data" />
     <MESSAGE value="Implement Logistic Regression" />
     <MESSAGE value="SMOTE - Pipeline" />
-    <option name="LAST_COMMIT_MESSAGE" value="SMOTE - Pipeline" />
+    <MESSAGE value="Know the Baseline" />
+    <MESSAGE value="Random forest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Random forest" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/frauddetection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+        <state relative-caret-position="305">
+          <caret line="117" selection-start-line="117" selection-end-line="129" selection-end-column="41" />
         </state>
       </provider>
     </entry>

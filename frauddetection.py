@@ -99,3 +99,32 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.3, random_s
 
 # Define the model as the random forest
 model = RandomForestClassifier(random_state=5)
+
+
+## Script Training
+
+# Fit the model to our training set
+model.fit(X_train, y_train)
+
+# Obtain predictions from the test data
+predicted = model.predict(X_test)
+
+# Print the accuracy performance metric
+print(accuracy_score(y_test,predicted))
+
+
+## Accuracy is not the best way to fraud cases.  ROC, Classification Report
+
+# Import the packages to get the different performance metrics
+from sklearn.metrics import classification_report, confusion_matrix, roc_auc_score
+
+# Obtain the predictions from our random forest model
+predicted = model.predict(X_test)
+
+# Predict probabilities
+probs = model.predict_proba(X_test)
+
+# Print the ROC curve, classification report and confusion matrix
+print(roc_auc_score(y_test, probs[:,1]))
+print(classification_report(y_test, predicted))
+print(confusion_matrix(y_test,predicted))
