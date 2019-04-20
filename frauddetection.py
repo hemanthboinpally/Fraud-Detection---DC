@@ -156,3 +156,20 @@ probs = model.predict_proba(X_test)
 print(roc_auc_score(y_test, probs[:,1]))
 print(classification_report(y_test,predicted))
 print(confusion_matrix(y_test,predicted))
+
+
+# Grid Search CV
+
+# Define the parameter sets to test
+param_grid = {'n_estimators': [1, 30], 'max_features': ['auto', 'log2'],  'max_depth': [4, 8], 'criterion': ['gini', 'entropy']
+}
+
+# Define the model to use
+model = RandomForestClassifier(random_state=5)
+
+# Combine the parameter sets with the defined model
+CV_model = GridSearchCV(estimator=model, param_grid=param_grid, cv=5, scoring='recall', n_jobs=-1)
+
+# Fit the model to our training data and obtain best parameters
+CV_model.fit(X_train, y_train)
+CV_model.best_params_
