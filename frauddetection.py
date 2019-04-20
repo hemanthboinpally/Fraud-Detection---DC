@@ -190,5 +190,14 @@ clf3 = DecisionTreeClassifier(random_state=5, class_weight="balanced")
 # Combine the classifiers in the ensemble model
 ensemble_model = VotingClassifier(estimators=[('lr', clf1), ('rf',clf2), ('dt', clf3)], voting='hard')
 
+
 # Get the results
+get_model_results(X_train, y_train, X_test, y_test, ensemble_model)
+
+# Change weights to get better results
+
+# Define the ensemble model
+ensemble_model = VotingClassifier(estimators=[('lr', clf1), ('rf', clf2), ('gnb', clf3)], voting='soft', weights=[1, 4, 1], flatten_transform=True)
+
+# Get results
 get_model_results(X_train, y_train, X_test, y_test, ensemble_model)
