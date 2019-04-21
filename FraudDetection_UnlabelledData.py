@@ -7,3 +7,15 @@ plt.hist(df_fraud.amount, alpha=0.5, label='fraud')
 plt.hist(df_non_fraud.amount, alpha=0.5, label='nonfraud')
 plt.legend()
 plt.show()
+
+
+# K-means
+# Import the scaler
+from sklearn.preprocessing import MinMaxScaler
+
+# Transform df into a numpy array
+X = np.array(df).astype(np.float)
+
+# Define the scaler and apply to the data
+scaler = MinMaxScaler()
+X_scaled = scaler.fit_transform(X)
