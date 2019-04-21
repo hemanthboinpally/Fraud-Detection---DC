@@ -30,3 +30,22 @@ kmeans = MiniBatchKMeans(n_clusters=8, random_state=0)
 # Fit the model to the scaled data
 kmeans.fit(X_scaled)
 kmeans.fit(X_scaled)
+
+### Elbow Method
+
+# Define the range of clusters to try
+clustno = range(1, 10)
+
+# Run MiniBatch Kmeans over the number of clusters
+kmeans = [MiniBatchKMeans(n_clusters=i) for i in clustno]
+
+# Obtain the score for each model
+score = [kmeans[i].fit(X_scaled).score(X_scaled) for i in range(len(kmeans))]
+
+# Plot the models and their respective score
+plt.plot(clustno, score)
+plt.xlabel('Number of Clusters')
+plt.ylabel('Score')
+plt.title('Elbow Curve')
+plt.show()
+
