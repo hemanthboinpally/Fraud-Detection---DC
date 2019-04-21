@@ -19,3 +19,14 @@ X = np.array(df).astype(np.float)
 # Define the scaler and apply to the data
 scaler = MinMaxScaler()
 X_scaled = scaler.fit_transform(X)
+
+
+# Import MiniBatchKmeans
+from sklearn.cluster import MiniBatchKMeans
+
+# Define the model
+kmeans = MiniBatchKMeans(n_clusters=8, random_state=0)
+
+# Fit the model to the scaled data
+kmeans.fit(X_scaled)
+kmeans.fit(X_scaled)
