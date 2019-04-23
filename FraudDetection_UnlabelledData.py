@@ -68,3 +68,12 @@ dist = [np.linalg.norm(x-y) for x, y in zip(X_test, X_test_clusters_centers[X_te
 km_y_pred = np.array(dist)
 km_y_pred[dist >= np.percentile(dist, 95)] = 1
 km_y_pred[dist < np.percentile(dist, 95)] = 0
+
+# Obtain the ROC score
+print(roc_auc_score(y_test, km_y_pred))
+
+# Create a confusion matrix
+km_cm = confusion_matrix(y_test,km_y_pred)
+
+# Plot the confusion matrix in a figure to visualize results
+plot_confusion_matrix(km_cm)
