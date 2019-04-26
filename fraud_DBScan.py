@@ -34,3 +34,15 @@ smallest_clusters = np.argsort(counts)[:3]
 # Print the counts of the smallest clusters only, This gives the count of the elements in those clusters.
 print("Their counts are:")
 print(counts[smallest_clusters])
+
+
+#Comparing the actuals Vs Predicted Labels. labels is the actual label
+
+# Create a dataframe of the predicted cluster numbers and fraud labels
+df = pd.DataFrame({'clusternr':pred_labels,'fraud':labels})
+
+# Create a condition flagging fraud for the smallest clusters
+df['predicted_fraud'] = np.where((pred_labels==21)|(pred_labels==17)|(pred_labels==9),1 , 0)
+
+# Run a crosstab on the results
+print(pd.crosstab(labels, df['predicted_fraud'], rownames=['Actual Fraud'], colnames=['Flagged Fraud']))
