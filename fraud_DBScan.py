@@ -21,3 +21,9 @@ n_clusters = len(set(pred_labels)) - (1 if -1 in labels else 0)
 print('Estimated number of clusters: %d' % n_clusters)
 print("Homogeneity: %0.3f" % homogeneity_score(labels, pred_labels))
 print("Silhouette Coefficient: %0.3f" % silhouette_score(X_scaled, pred_labels))
+
+# Count observations in each cluster number
+counts = np.bincount(pred_labels[pred_labels >= 0])
+
+# Print the result
+print(counts)
