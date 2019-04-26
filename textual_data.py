@@ -45,3 +45,6 @@ topics = ldamodel.print_topics(num_words=5)
 # Print the results
 for topic in topics:
     print(topic)
+
+
+# Visualize the topics and the words in each document
