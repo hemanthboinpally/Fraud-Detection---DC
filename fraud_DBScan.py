@@ -27,3 +27,10 @@ counts = np.bincount(pred_labels[pred_labels >= 0])
 
 # Print the result
 print(counts)
+
+# Sort the sample counts of the clusters and take the top 3 smallest clusters, This gives the indices/cluster numbers
+smallest_clusters = np.argsort(counts)[:3]
+
+# Print the counts of the smallest clusters only, This gives the count of the elements in those clusters.
+print("Their counts are:")
+print(counts[smallest_clusters])
