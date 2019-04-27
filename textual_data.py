@@ -34,6 +34,11 @@ print(dictionary)
 print(corpus)
 
 
+
+
+
+
+
 #Creating LDA Model
 
 # Define the LDA model
@@ -48,3 +53,18 @@ for topic in topics:
 
 
 # Visualize the topics and the words in each document
+
+
+def get_topic_details(ldamodel, corpus):
+    topic_details_df = pd.DataFrame()
+    for i, row in enumerate(ldamodel[corpus]):
+        row = sorted(row, key=lambda x: (x[1]), reverse=True)
+        for j, (topic_num, prop_topic) in enumerate(row):
+            if j == 0:  # => dominant topic
+                wp = ldamodel.show_topic(topic_num)
+                topic_details_df = topic_details_df.append(pd.Series([topic_num, prop_topic]), ignore_index=True)
+    topic_details_df.columns = ['Dominant_Topic', '% Score']
+    return topic_details_df
+
+
+print(get_topic_details(ldamodel, corpus))
