@@ -73,3 +73,8 @@ print(get_topic_details(ldamodel, corpus))
 contents = pd.DataFrame({'Original text': text_clean})
 topic_details = pd.concat([get_topic_details(ldamodel, corpus), contents], axis=1)
 print(topic_details.head())
+
+
+# Create flag for text highest associated with topic 3
+topic_details['flag'] = np.where((topic_details['Dominant_Topic'] == 3.0), 1, 0)
+print(topic_details.head())
