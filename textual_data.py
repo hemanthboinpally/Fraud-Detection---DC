@@ -68,3 +68,8 @@ def get_topic_details(ldamodel, corpus):
 
 
 print(get_topic_details(ldamodel, corpus))
+
+# Add original text to topic details in a dataframe
+contents = pd.DataFrame({'Original text': text_clean})
+topic_details = pd.concat([get_topic_details(ldamodel, corpus), contents], axis=1)
+print(topic_details.head())
